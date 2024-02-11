@@ -1,0 +1,391 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    text-align: center;
+    padding: 50px;
+    
+}
+
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #06C167;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #059c55;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+/* Reset some default styles and provide basic styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the logo */
+.logo {
+    font-size: 24px;
+}
+
+/* Style the navigation */
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar li {
+    margin-right: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Style the active link */
+.nav-bar a.active {
+    color: #06C167;
+}
+
+/* Style the hamburger menu */
+.hamburger { 
+     display: none; 
+     cursor: pointer; 
+} 
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+.content {
+    background-image: url('Images/Donationimg1.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    
+    /* Additional properties */
+    height: 400px; /* Set the height of the section */
+    padding: 60px; /* Add padding around the content */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center-align text */
+    font-size: 24px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content1 {
+    background-image: url('Images/donation5img.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    
+    /* Additional properties */
+    height: 300px; /* Set the height of the section */
+    padding: 60px; /* Add padding around the content */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center-align text */
+    font-size: 24px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content p{
+     color: rgb(241, 239, 239);
+}
+.content1 p{
+    color: rgb(241, 239, 239);
+}
+.aboutcontent{
+    background-color: #fff;
+    display: block;
+    background-color: #00000030;
+    display: block;
+    
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.regform {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+.secimg {
+    /* Specify the URL of the background image */
+    background-image: url('Images/donation3img.jpg');
+    
+    /* Background properties */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    
+    /* Additional properties */
+    height: 400px; /* Set the height of the section */
+    padding: 20px; /* Add padding around the content */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center-align text */
+    font-size: 24px; /* Set font size */
+    /* You can add more properties based on your design requirements */
+}
+
+.secimg h2 {
+    margin-bottom: 10px; /* Add margin below the heading */
+}
+
+.secimg p {
+    margin-bottom: 20px;
+    color: #fff; /* Add margin below the paragraph */
+}
+
+.secimg button {
+    background-color: #06C167; /* Set button background color */
+    color: #ffffff; /* Set button text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.secimg button:hover {
+    background-color: #057754; /* Change background color on hover */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+.textlabel {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.radio {
+    margin-bottom: 15px;
+}
+
+.password {
+    position: relative;
+}
+
+#password {
+    width: calc(100% - 24px);
+}
+
+.showHidePw {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.btn button {
+    background-color: #06C167;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signin-up {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signin-up a {
+    color: #06C167;
+    text-decoration: none;
+}
+/* CSS for social media icons */
+.social {
+    margin-top: 20px;
+}
+
+.social h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social a i {
+    font-size: 24px;
+    color: #fff; /* Change color as needed */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.social a:hover i {
+    color: #fff; /* Change color on hover */
+}
+.itm p{
+    color: #06C167;
+}
+.contact-form {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form p{
+    font-size: large;
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-form p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button[type="submit"] {
+    background-color: #06C167;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #058b4b;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #333;
+        padding: 10px;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-bar.show {
+        display: flex;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+    }
+}
