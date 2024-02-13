@@ -70,7 +70,10 @@ header {
 .logo {
     font-size: 24px;
 }
-
+select{
+    width:100%;
+    padding: 8px;
+}
 
 .nav-bar ul {
     list-style: none;

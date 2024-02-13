@@ -53,6 +53,7 @@
                 <div class="input">
                 
                 <label for="province">Cities:</label>
+                
                     <select id="province" name="province">
                     <option value="Toronto">Toronto</option>
                     <option value="Ottawa">Ottawa</option>
