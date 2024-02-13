@@ -50,14 +50,13 @@ footer {
     padding: 10px;
     width: 100%;
 }
-/* Reset some default styles and provide basic styling */
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
 }
 
-/* Style the header */
 header {
     background-color: #333;
     color: #fff;
@@ -67,12 +66,12 @@ header {
     align-items: center;
 }
 
-/* Style the logo */
+
 .logo {
     font-size: 24px;
 }
 
-/* Style the navigation */
+
 .nav-bar ul {
     list-style: none;
     margin: 0;
@@ -91,12 +90,12 @@ header {
     font-size: 16px;
 }
 
-/* Style the active link */
+
 .nav-bar a.active {
     color: #06C167;
 }
 
-/* Style the hamburger menu */
+
 .hamburger { 
      display: none; 
      cursor: pointer; 
@@ -108,34 +107,49 @@ header {
     background-color: #fff;
     margin: 5px 0;
 }
+/* About Page css */
 .content {
     background-image: url('Images/Donationimg1.jpg');
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    
-    /* Additional properties */
-    height: 400px; /* Set the height of the section */
-    padding: 60px; /* Add padding around the content */
-    color: #ffffff; /* Set text color to white */
-    text-align: center; /* Center-align text */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 400px; 
+    padding: 60px; 
+    color: #fff; 
+    text-align: center; 
     font-size: 24px;
     background-color: #fff;
     margin: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    
 }
+
+.aboutcontent {
+    flex: 1; 
+    margin-right: 600px; 
+    color: #fff;
+    animation:  slideFromTop 1s ease forwards; 
+}
+@keyframes slideFromTop {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 400px; 
+    }
+}
+/* Contact Page Css */
 .content1 {
     background-image: url('Images/donation5img.jpg');
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    
-    /* Additional properties */
-    height: 300px; /* Set the height of the section */
-    padding: 60px; /* Add padding around the content */
-    color: #ffffff; /* Set text color to white */
-    text-align: center; /* Center-align text */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 300px; 
+    padding: 60px; 
+    color: #ffffff; 
+    text-align: center; 
     font-size: 24px;
     background-color: #fff;
     margin: 20px;
@@ -155,6 +169,25 @@ header {
     display: block;
     
 }
+.content1 h3{
+
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: slideRight 12s linear infinite;  
+    color:#fff;
+    
+    }
+    
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100%); /* Start off-screen from the left */
+        }
+        100% {
+            transform: translateX(100%); /* Move off-screen to the right */
+        }
+    }
+    
+
 .container {
     display: flex;
     justify-content: center;
@@ -169,45 +202,41 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
+/* Home Page css */
 .secimg {
-    /* Specify the URL of the background image */
     background-image: url('Images/donation3img.jpg');
-    
-    /* Background properties */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    
-    /* Additional properties */
-    height: 400px; /* Set the height of the section */
-    padding: 20px; /* Add padding around the content */
-    color: #ffffff; /* Set text color to white */
-    text-align: center; /* Center-align text */
-    font-size: 24px; /* Set font size */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 400px; 
+    padding: 20px; 
+    color: #ffffff; 
+    text-align: center; 
+    font-size: 24px;
     
 }
 
 .secimg h2 {
-    margin-bottom: 10px; /* Add margin below the heading */
+    margin-bottom: 10px; 
 }
 
 .secimg p {
     margin-bottom: 20px;
-    color: #fff; /* Add margin below the paragraph */
+    color: #fff; 
 }
 
 .secimg button {
-    background-color: #06C167; /* Set button background color */
-    color: #ffffff; /* Set button text color */
-    padding: 10px 20px; /* Add padding to the button */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Add border radius to the button */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    background-color: #06C167; 
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 .secimg button:hover {
-    background-color: #057754; /* Change background color on hover */
+    background-color: #057754; 
 }
 
 .logo {
@@ -241,7 +270,7 @@ input {
 .radio {
     margin-bottom: 15px;
 }
-
+/* signin page css */
 .password {
     position: relative;
 }
@@ -276,7 +305,7 @@ input {
     color: #06C167;
     text-decoration: none;
 }
-/* CSS for social media icons */
+/* footer icon styles */
 .social {
     margin-top: 20px;
 }
@@ -293,16 +322,18 @@ input {
 
 .social a i {
     font-size: 24px;
-    color: #fff; /* Change color as needed */
-    transition: color 0.3s ease; /* Smooth transition effect */
+    color: #fff; 
+    transition: color 0.3s ease; 
 }
 
 .social a:hover i {
-    color: #fff; /* Change color on hover */
+    color: #fff; 
 }
+/* Delivery Page Css */
 .itm p{
     color: #06C167;
 }
+/* Contact Page CSS */
 .contact-form {
     margin-top: 50px;
     padding: 20px;
@@ -344,7 +375,7 @@ input {
 }
 
 .contact-form textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
 }
 
 .contact-form button[type="submit"] {
@@ -361,6 +392,127 @@ input {
 .contact-form button[type="submit"]:hover {
     background-color: #058b4b;
 }
+/* Services page Css */
+.content2 {
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    flex: 0 0 auto; 
+    margin-right: 20px; 
+}
+
+.image-container img {
+    width: 70%; 
+    height: auto; 
+}
+
+.context {
+    flex: 1; 
+    font-size: xx-large;
+    position: relative; 
+    overflow: hidden; 
+    font-display:initial;
+}
+.context::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 200%; 
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 1.5s infinite; 
+}
+
+/* Define shimmer animation */
+@keyframes shimmer {
+    0% {
+        left: -100%; /* Start off-screen */
+    }
+    100% {
+        left: 100%; /* End off-screen */
+    }
+}
+/* CSS for list items */
+.context ul li {
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: slideInLeft 0.5s forwards; 
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delay for each list item */
+.context ul li:nth-child(1) {
+    animation-delay: 1s; 
+    color: #059c55;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+
+.context ul li:nth-child(2) {
+    animation-delay: 2s; 
+    color: #333;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+
+.context ul li:nth-child(3) {
+    animation-delay: 3s; 
+    color: #059c55;    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+
+.context ul li:nth-child(4) {
+    animation-delay: 4s; 
+    color: #333;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+.context ul li:nth-child(5) {
+    animation-delay: 5s; 
+    color: #059c55;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+.context ul li:nth-child(6) {
+    animation-delay: 6s; 
+    color: #333;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+.context ul li:nth-child(7) {
+    animation-delay: 7s; 
+    color: #059c55;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+.context h4 {
+    position: relative; 
+    animation: slide-up 1s ease-out; 
+    opacity: 0;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0; 
+        transform: translateY(50px); 
+    }
+     100% { 
+        opacity: 1;  
+        transform: translateY(0);  
+     } 
+}
+
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 768px) {

@@ -6,17 +6,17 @@ include 'connection.php';
 $msg = 0;
 
 if (isset($_POST['sign'])) {
-  $username = mysqli_real_escape_string($connection, $_POST['username']);
+  $email = mysqli_real_escape_string($connection, $_POST['email']);
   $password = mysqli_real_escape_string($connection, $_POST['password']);
 
-  $sql = "SELECT * FROM signup WHERE username='$username'";
+  $sql = "SELECT * FROM signup WHERE email='$email'";
   $result = mysqli_query($connection, $sql);
   $num = mysqli_num_rows($result);
 
   if ($num == 1) {
     $row = mysqli_fetch_assoc($result);
     if (password_verify($password, $row['password'])) {
-      $_SESSION['username'] = $username;
+      $_SESSION['email'] = $email;
       $_SESSION['name'] = $row['firstName']; 
       
       header("location: donationform.php");
@@ -64,7 +64,7 @@ if (isset($_POST['sign'])) {
             <ul>
                
                 <li><a href="signin.php" >Signin</a></li>
-                <li><a href="delivery.html" >Delivery</a></li>
+                <li><a href="services.html" >Services</a></li>
             </ul>
         </nav>
     </header>
@@ -76,10 +76,10 @@ if (isset($_POST['sign'])) {
                 <p id="heading">Welcome back!</p>
 
                 <div class="input">
-                    <input type="text" placeholder="Username" name="username" value="" required />
+                    <input type="text" placeholder="email" name="email" value=""  />
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Password" name="password" id="password" required />
+                    <input type="password" placeholder="Password" name="password" id="password"  />
                     <i class="uil uil-eye-slash showHidePw"></i>
                     <?php
                     if($msg==1){

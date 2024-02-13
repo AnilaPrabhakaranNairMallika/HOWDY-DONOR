@@ -111,7 +111,7 @@ if(isset($_POST['sign'])) {
             <ul>
                
                 <li><a href="signin.php" >Signin</a></li>
-                <li><a href="delivery.html" >Delivery</a></li>
+                <li><a href="services.html" >Services</a></li>
             </ul>
         </nav>
     </header>
