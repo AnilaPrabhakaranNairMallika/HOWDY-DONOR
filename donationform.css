@@ -1,0 +1,126 @@
+/* Styling the form */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.regformf {
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 20px;
+}
+
+.input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input input,
+.input select {
+    width: calc(100% - 30px); /* Adjusted width to account for padding and border */
+    padding: 8px; /* Reduced padding */
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; 
+}
+.quantity-input {
+    width: 200px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    padding: 10px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn button:hover {
+    background-color: #06C167;
+}
+.contact-details-container {
+    max-width: 400px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details-container b {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-details-container .input {
+    margin-bottom: 15px;
+}
+
+.contact-details-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-details-container input,
+.contact-details-container select {
+    width: calc(100% - 22px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-details-container select {
+    padding: 10px;
+}
+
+.contact-details-container input[type="text"] {
+    height: 35px; /* Adjust the height as needed */
+}
+
+.contact-details-container select {
+    height: 35px; /* Adjust the height as needed */
+}
+
+.contact-details-container input[type="text"]:focus,
+.contact-details-container select:focus {
+    border-color: #06C167;
+    outline: none;
+}
+.donation-item {
+    display: flex;
+    align-items: center;
+}
+.donation_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.donation_form label {
+    margin-right: 10px;
+    width: 20%;
+    text-align: left;
+}
+
+.donation_form input[type="text"],
+.donation_form input[type="number"] {
+    flex: 1,1;/* Expand the input field to fill available space */
+    margin-left: 10px; 
+    /* width: 200px; */
+}

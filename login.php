@@ -2,7 +2,7 @@
 session_start();
 include 'connection.php';
 // $connection = mysqli_connect("localhost:3307", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
+$db = mysqli_select_db($connection, 'demo');
 if (isset($_POST['sign'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -10,18 +10,20 @@ if (isset($_POST['sign'])) {
   $sanitized_password =  mysqli_real_escape_string($connection, $password);
   // $hash=password_hash($password,PASSWORD_DEFAULT);
 
-  $sql = "select * from signup where email='$sanitized_emailid'";
+  $sql = "select * from login where email='$sanitized_emailid'";
   $result = mysqli_query($connection, $sql);
   $num = mysqli_num_rows($result);
   if ($num == 1) {
     while ($row = mysqli_fetch_assoc($result)) {
       if (password_verify($sanitized_password, $row['password'])) {
         $_SESSION['email'] = $email;
-        $_SESSION['firstname'] = $row['firstname'];
-        
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['gender'] = $row['gender'];
+        $_SESSION['address'] = $row['address'];
+
         header("location:home.html");
       } else {
-        echo "<h1><center> Login Failed incorrect password</center></h1>";
+        // echo "<h1><center> Login Failed incorrect password</center></h1>";
       }
     }
   } else {
