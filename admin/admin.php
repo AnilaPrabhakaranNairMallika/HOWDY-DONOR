@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; // or your database host
-$username = "root"; // or your database username
-$password = ""; // or your database password
-$database = "demo"; // replace with your actual database name
+$host = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$database = "demo"; 
 
 // Create connection
 $connection = mysqli_connect($host, $username, $password, $database);
