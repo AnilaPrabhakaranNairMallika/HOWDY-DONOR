@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include 'connection.php';
 // $connection=mysqli_connect("localhost:3307","root","");
 // $db=mysqli_select_db($connection,'demo');
@@ -113,6 +115,7 @@ if(isset($_POST['sign']))
                 
                 <input type="text" id="address" name="address" required/>
              </div>
+             
              <div class="btn">
                 <button type="submit" name="sign">Continue</button>
              </div>

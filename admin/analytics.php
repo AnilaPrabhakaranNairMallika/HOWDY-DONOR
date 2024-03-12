@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; // or your database host
-$username = "root"; // or your database username
-$password = ""; // or your database password
-$database = "demo"; // replace with your actual database name
+$host = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$database = "demo"; 
 
 // Create connection
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -82,6 +82,7 @@ if(empty($_SESSION['name'])){
 
                     $query_male = "SELECT SUM(quantity) as total FROM donations INNER JOIN login ON donations.email = login.email WHERE login.gender='male'";
                     $query_female = "SELECT SUM(quantity) as total FROM donations INNER JOIN login ON donations.email = login.email WHERE login.gender='female'";
+
                     $query_Others = "SELECT SUM(quantity) as total FROM donations INNER JOIN login ON donations.email = login.email WHERE login.gender='Others'";
                     $result_male = mysqli_query($connection, $query_male);
                     $result_female = mysqli_query($connection, $query_female);

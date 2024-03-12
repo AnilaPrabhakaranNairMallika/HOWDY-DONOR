@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; // or your database host
-$username = "root"; // or your database username
-$password = ""; // or your database password
-$database = "demo"; // replace with your actual database name
+$host = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$database = "demo"; 
 
 // Create connection
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -114,7 +114,7 @@ mysqli_close($connection);
             <p><strong>Location:</strong> <?php echo $admin_data['location']; ?></p>
             <p><strong>Address:</strong> <?php echo $admin_data['address']; ?></p>
             <!-- <p><strong>Date:</strong> <?php echo $admin_data['date']; ?></p> -->
-            <!-- Add more details here as needed -->
+            
         </div>
     </div>
 </body>

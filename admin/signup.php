@@ -1,7 +1,7 @@
 <?php
-// session_start();
-// $connection=mysqli_connect("localhost:3307","root","");
-// $db=mysqli_select_db($connection,'demo');
+ session_start();
+//$connection=mysqli_connect("localhost:3307","root","");
+ //$db=mysqli_select_db($connection,'demo');
 include '../connection.php';
 $msg=0;
 if(isset($_POST['sign']))
@@ -49,10 +49,6 @@ if(isset($_POST['sign']))
 ?>
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,61 +63,36 @@ if(isset($_POST['sign']))
 </head>
 <body>
     <div class="container">
-        <form action=" " method="post" id="form">
-        <!-- <p class="logo" style="">Food <b style="color:#06C167; ">Donate</b></p> -->
+        <form action="" method="post" id="form" onsubmit="return validateForm()">
             <span class="title">Register</span>
             <br>
             <br>
             <div class="input-group">
                 <label for="username">Name</label>
-                <input type="text" id="username" name="username" required/>
-                <div class="error"></div>
+                <input type="text" id="username" name="username" >
+                <div class="error" id="username-error"></div> <!-- Error message container -->
             </div>
             <div class="input-group">
-                    <label for="email">Email</label>
-                <input type="email" id="email" name="email" required/>
-                        
-                    </div>
-            <!-- <div class="input-group">
-                 <label for="phoneno">phone Number</label> 
-                <input type="text" id="phoneno" name="phoneno" placeholder="Phone Number"  required/>
-                <div class="error"></div>
-            </div> -->
-
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" >
+                <div class="error" id="email-error"></div>
+            </div>
             <label class="textlabel" for="password">Password</label> 
              <div class="password">
-              
-                <input type="password" name="password" id="password"  required/>
-                <!-- <i class="fa fa-eye-slash" aria-hidden="true" id="showpassword"></i> -->
-                <!-- <i class="bi bi-eye-slash" id="showpassword"></i>  -->
-                <!-- <i class="uil uil-lock icon"></i> -->
-                <i class="uil uil-eye-slash showHidePw" id="showpassword"></i>                
-                <?php
-                    if($msg==1){
-                        echo ' <i class="bx bx-error-circle error-icon"></i>';
-                        echo '<p class="error">Password don\'t match.</p>';
-                    }
-                    ?> 
+                <input type="password" name="password" id="password" >
+                <i class="uil uil-eye-slash showHidePw" id="showpassword"></i>
+                <div class="error" id="password-error"></div>
              </div>
-            <!-- <div class="input-group">
-                <label for="cpassword">Confirm Password</label>
-                <input type="password" id="cpassword" name="cpassword">
-                <div class="error"></div>
-            </div> -->
             <div class="input-group">
-                    <label for="address">Address</label>
-                    <textarea id="address" name="address" id="address" required/></textarea>
-     
-                <!-- <input type="text" id="address" name="address" required/> -->
-                        
-                    </div>
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" >
+                <div class="error" id="address-error"></div>
+            </div>
             <div class="input-field">
-                        <!-- <label for="district">Location:</label> -->
-                        <!-- <br> -->
-                        <label for="district">Provinces:</label>
-                        <select id="district" name="district" style="padding:10px;">
-                        <option value="Alberta">Alberta</option>
-                        <option value="British Columbia">British Columbia</option>
+                <label for="district">Provinces:</label>
+                <select id="district" name="district" style="padding:10px;" >
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
                         <option value="Manitoba">Manitoba</option>
                         <option value="New Brunswick">New Brunswick</option>
                         <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
@@ -134,25 +105,67 @@ if(isset($_POST['sign']))
                         <option value="Nunavut">Nunavut</option>
                         <option value="Yukon">Yukon</option>
 
-                        </select>  
-                        
-
-                        <!-- <input type="password" class="password" placeholder="Create a password" required> -->
-                        <!-- <i class="uil uil-map-marker icon"></i> -->
-                    </div>
-                  
-         
+                </select>  
+            </div>
             <button type="submit" name="sign">Register</button>
             <div class="login-signup" >
-                    <span class="text">Already a member?
-                        <a href="signin.php" class="text login-link">Login Now</a>
-                    </span>
-                </div>
+                <span class="text">Already a member?
+                    <a href="signin.php" class="text login-link">Login Now</a>
+                </span>
+            </div>
         </form>
     </div>
     <br>
     <br>
-    <script src="login.js" ></script>
-    <!-- <script src="../login.js"></script> -->
+    <script src="login.js"></script>
+    
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var address = document.getElementById('address').value;
+
+            var usernameError = document.getElementById('username-error');
+            var emailError = document.getElementById('email-error');
+            var passwordError = document.getElementById('password-error');
+            var addressError = document.getElementById('address-error');
+
+            // Resetting previous errors
+            usernameError.innerHTML = "";
+            emailError.innerHTML = "";
+            passwordError.innerHTML = "";
+            addressError.innerHTML = "";
+
+            
+            if (username.trim() === "") {
+                usernameError.innerHTML = "Name is required.";
+                return false;
+            }
+
+            if (email.trim() === "") {
+                emailError.innerHTML = "Email is required.";
+                return false;
+            }
+
+            
+
+            if (password.trim() === "") {
+                passwordError.innerHTML = "Password is required.";
+                return false;
+            }
+
+            if (address.trim() === "") {
+                addressError.innerHTML = "Address is required.";
+                return false;
+            }
+
+            return true; // Form submission allowed if all validations pass
+        }
+    </script>
 </body>
 </html>
+
+
+
+

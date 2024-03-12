@@ -47,6 +47,7 @@ $result = mysqli_query($connection, $query);
             <p>Name  : <?php echo $_SESSION['name'] ;?></p><br>
             <p>Email : <?php echo $_SESSION['email'];?></p><br>
             <p>Gender: <?php echo $_SESSION['gender'] ;?></p><br>
+
             <a href="logout.php" style="float: left; margin-top: 6px; border-radius: 5px; background-color: #06C167; color: white; padding: 5px 10px;">Logout</a>
         </div>
         <hr>
@@ -62,6 +63,7 @@ $result = mysqli_query($connection, $query);
                             <th>Phone Number</th>
                             <th>Location</th>
                             <th>Address</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

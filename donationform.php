@@ -147,9 +147,9 @@ foreach($donations as $donation) {
     </div>
     <div class="input">
         <label for="phoneno">PhoneNo:</label>
-        <input type="text" id="phoneno" name="phoneno" maxlength="10" pattern="[0-9]{10}" required>
+        <input type="text" id="phoneno" name="phoneno" maxlength="10"  pattern="[0-9]{10}"  required>
     </div>
-    <div class="input">
+     <div class="input">
         <label for="district">Provinces:</label>
         <select id="district" name="district" style="padding: 10px;">
             <option value="Alberta">Alberta</option>
@@ -168,6 +168,8 @@ foreach($donations as $donation) {
         </select>
         <label for="address" style="padding-left: 10px;">Address:</label>
         <input type="text" id="address" name="address"  value="<?php echo $_SESSION['address'];?>"required>
+    </div>
+    
     </div>
 </div>
 
