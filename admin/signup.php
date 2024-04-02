@@ -89,21 +89,21 @@ if(isset($_POST['sign']))
                 <div class="error" id="address-error"></div>
             </div>
             <div class="input-field">
-                <label for="district">Provinces:</label>
+                <label for="district">Cities:</label>
                 <select id="district" name="district" style="padding:10px;" >
-                    <option value="Alberta">Alberta</option>
-                    <option value="British Columbia">British Columbia</option>
-                        <option value="Manitoba">Manitoba</option>
-                        <option value="New Brunswick">New Brunswick</option>
-                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                        <option value="Nova Scotia">Nova Scotia</option>
-                        <option value="Ontario">Ontario</option>
-                        <option value="Prince Edward Island">Prince Edward Island</option>
-                        <option value="Quebec">Quebec</option>
-                        <option value="Saskatchewan">Saskatchewan</option>
-                        <option value="Northwest Territories">Northwest Territories</option>
-                        <option value="Nunavut">Nunavut</option>
-                        <option value="Yukon">Yukon</option>
+                <option value="Toronto">Toronto</option>
+                <option value="Ottawa">Ottawa</option>
+                <option value="Kitchener">Kitchener</option>
+                <option value="Oshawa">Oshawa</option>
+                <option value="St.Catherines">St.Catherines</option>
+                <option value="Kingston">Kingston</option>
+                <option value="Greater Sudbury">Greater Sudbury</option>
+                <option value="Peterburg">Peterburg</option>
+                <option value="Hamilton">Hamilton</option>
+                <option value="Windsor">Windsor</option>
+                <option value="Brantford">Brantford</option>
+                <option value="Barrie">Barrie</option>
+                <option value="Missisauga">Missisauga</option> 
 
                 </select>  
             </div>
