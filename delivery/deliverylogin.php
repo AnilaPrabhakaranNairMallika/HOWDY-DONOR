@@ -2,7 +2,7 @@
 session_start();
 // $connection = mysqli_connect("localhost:3307", "root", "");
 //$db = mysqli_select_db($connection, 'demo');
-include '../connection.php'; 
+include '../connection.php'; // connection
 $msg=0;
 if (isset($_POST['sign'])) {
   $email = $_POST['email'];

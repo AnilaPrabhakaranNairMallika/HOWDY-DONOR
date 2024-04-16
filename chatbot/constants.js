@@ -78,7 +78,7 @@ const prompts = [
     [currentdate],
     [time],
     ["you can donate foods, groceries,shoes, clothes,utensils"],
-    ["Madurai old age Charitable Trust,208, East Veli Street, Near Keshavan Hospital, "],
+    ["346 West St, Brantford, Canada "],
     ["joke ha ha .."],
     ["You can package your cooked or raw food donations in airtight containers such as Tupperware or plastic bags. You can also use aluminum foil or cling wrap to keep the food fresh. Please make sure to label the containers with the type of food, date, and any relevant instructions"],
      ["Your donation will be used to support our mission and the various programs and initiatives that we have in place. Your donation will help us to continue providing assistance and support to those in need. You can find more information about our programs and initiatives on our website"],
@@ -96,7 +96,7 @@ const prompts = [
     // "Try again",
     // // "I'm listening...:/",
     // "I don't understand ",
-    " 😢sorry i am still under development "
+    " sorry i am still under development "
   ]
   
   // Whatever else you want :)

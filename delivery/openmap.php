@@ -192,5 +192,49 @@ getVisitorLocation();
 
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+          <p class="about">
+            <span> About us</span>The basic concept of Howdy Donor is to collect the donations from donors and distribute to  the  needy people accross Canada .
+     </p>
+        
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+          <div>
+            <p><span> Contact</span> </p>
+            
+          </div>
+          <div>
+        
+            <p> (+1) 123 456 7890</p>
+            
+          </div>
+          <div>
+            <!-- <i class="fa fa-envelope" style="font-size: 17px;
+            line-height: 38px; color:white;"></i> -->
+            <p><a href="#"> HowdyDonor@gmail.com</a></p>
+          </div>
+          
+          <div class="sociallist">
+            <ul class="social">
+            <li><a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+            <li><a href="https://twitter.com/globalgiving"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+            <li><a href="https://www.instagram.com/charitism/"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+            <li><a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp" style="font-size:50px;color: black;"></i></a></li>
+           </ul>
+          </div>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+          <h2> Howdy<span> Donor</span></h2>
+          <!-- <h2>Howdy Donor</h2> -->
+          <p class="menu">
+            <a href="#"> Home</a> |
+            <a href="about.html"> About</a> |
+            <a href="profile.php"> Profile</a> |
+            <a href="contact.html"> Contact</a>
+          </p>
+          <p class="name"> Howdy Donor &copy 2024</p>
+        </div>
+      </footer>
   </body>
 </html>

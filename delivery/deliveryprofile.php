@@ -65,9 +65,7 @@ $Did = $_SESSION['Did'];
             <p><strong>Email:</strong> <?php echo $email; ?></p>
             <p><strong>City:</strong> <?php echo $city; ?></p>
         </div> 
-        <!-- <div class="logout_link">
-            <a href="logout.php">Logout</a>
-        </div>
-    </div>
+</div>
+       
 </body>
 </html>

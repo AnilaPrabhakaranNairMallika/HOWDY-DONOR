@@ -119,7 +119,7 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
     <div class="get">
         <div class="log">
             <a href="delivery.php">Take orders</a>
-            <p>Order assigned to you</p>
+            <p>Orders Accepted</p>
         </div>
         
         <!-- Display the orders in an HTML table -->

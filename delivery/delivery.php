@@ -202,5 +202,6 @@ WHERE d.assigned_to IS NULL AND d.location = '$city'";
     <br>
     <br>
 </div>
+
 </body>
 </html>

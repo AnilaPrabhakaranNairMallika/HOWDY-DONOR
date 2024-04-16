@@ -89,7 +89,7 @@ if(isset($_POST['sign']))
                 <div class="error" id="address-error"></div>
             </div>
             <div class="input-field">
-                <label for="district">Cities:</label>
+                <label for="district">City:</label>
                 <select id="district" name="district" style="padding:10px;" >
                 <option value="Toronto">Toronto</option>
                 <option value="Ottawa">Ottawa</option>
