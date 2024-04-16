@@ -1,68 +1,60 @@
 <?php
-include("login.php"); 
+include("login.php");
 
-if($_SESSION['name'] == ''){
+if ($_SESSION['name'] == '') {
     header("location: signin.php");
 }
 
 $emailid = $_SESSION['email'];
 $db = mysqli_select_db($connection, 'demo');
 
-if(isset($_POST['submit'])) {
-    $donations = $_POST['donations'];
-    $name = mysqli_real_escape_string($connection, $_POST['name']);
-    $phoneno = mysqli_real_escape_string($connection, $_POST['phoneno']);
-    $district = mysqli_real_escape_string($connection, $_POST['district']);
-    $address = mysqli_real_escape_string($connection, $_POST['address']);
+if (isset($_POST['submit'])) {
+    // Check if donations are selected
+    if (isset($_POST['donations']) && is_array($_POST['donations'])) {
+        $donations = $_POST['donations'];
+        $name = mysqli_real_escape_string($connection, $_POST['name']);
+        $phoneno = mysqli_real_escape_string($connection, $_POST['phoneno']);
+        $district = mysqli_real_escape_string($connection, $_POST['district']);
+        $address = mysqli_real_escape_string($connection, $_POST['address']);
 
-//     foreach($donations as $donation) {
-//         $quantity = mysqli_real_escape_string($connection, $_POST['quantity'][$donation]); // Get quantity for current donation type
-        
-//         $query = "INSERT INTO donations (email, donation_type, quantity, phoneno, location, address, name) 
-//                   VALUES ('$emailid', '$donation', '$quantity', '$phoneno', '$district', '$address', '$name')";
-//         $query_run = mysqli_query($connection, $query);
+        foreach ($donations as $donation) {
+            // Get quantity for current donation type
+            $quantity = mysqli_real_escape_string($connection, $_POST['quantity'][$donation]);
 
-//         if($query_run)
-//     {
+            // Get subcategory data
+            $subcategory_type = "";
+            $subcategory_size = "";
+            $category = "";
+            $footwear_category = ""; // Initialize footwear_category variable
+            if ($donation === "clothes") {
+                $subcategory_type = mysqli_real_escape_string($connection, $_POST['clothes_type']);
+                $subcategory_size = mysqli_real_escape_string($connection, $_POST['clothes_size']);
+                $category = mysqli_real_escape_string($connection, $_POST['clothes_category']);
+            } elseif ($donation === "footwares") {
+                // Get footwear category
+                $footwear_category = mysqli_real_escape_string($connection, $_POST['footwear_category']);
+            }
 
-//         echo '<script type="text/javascript">alert("data saved")</script>';
-//         header("location:delivery.html");
-//     }
-//     else{
-//         echo '<script type="text/javascript">alert("data not saved")</script>';
-//     }
-// }
-foreach($donations as $donation) {
-    // Get quantity for current donation type
-    $quantity = mysqli_real_escape_string($connection, $_POST['quantity'][$donation]);
-    
-    // Get subcategory data
-    $subcategory_type = "";
-    $subcategory_size = "";
-    $category = "";
-    if ($donation === "clothes") {
-        $subcategory_type = mysqli_real_escape_string($connection, $_POST['clothes_type']);
-        $subcategory_size = mysqli_real_escape_string($connection, $_POST['clothes_size']);
-        $category = mysqli_real_escape_string($connection, $_POST['clothes_category']);
-    }
+            // Insert data into the database
+            $query = "INSERT INTO donations (email, donation_type, quantity, phoneno, location, address, name, subcategory_type, subcategory_size, category, footwear_category) 
+                      VALUES ('$emailid', '$donation', '$quantity', '$phoneno', '$district', '$address', '$name', '$subcategory_type', '$subcategory_size', '$category', '$footwear_category')";
+            $query_run = mysqli_query($connection, $query);
 
-    // Insert data into the database
-    $query = "INSERT INTO donations (email, donation_type, quantity, phoneno, location, address, name, subcategory_type, subcategory_size, category) 
-              VALUES ('$emailid', '$donation', '$quantity', '$phoneno', '$district', '$address', '$name', '$subcategory_type', '$subcategory_size', '$category')";
-    $query_run = mysqli_query($connection, $query);
-
-    // Handle success or failure of the query
-    if($query_run) {
-        echo '<script type="text/javascript">alert("data saved")</script>';
-        header("location:delivery.html");
+            // Handle success or failure of the query
+            if ($query_run) {
+                echo '<script type="text/javascript">alert("data saved")</script>';
+                header("location:delivery.html");
+            } else {
+                echo '<script type="text/javascript">alert("data not saved")</script>';
+            }
+        }
     } else {
-        echo '<script type="text/javascript">alert("data not saved")</script>';
+        // No donations selected
+        echo '<script type="text/javascript">alert("Please select at least one donation type")</script>';
     }
 }
-
-    }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,11 +100,25 @@ foreach($donations as $donation) {
                 <input type="text" id="food_quantity" name="quantity[food]" placeholder="Quantity Per Person" class="quantity-input">
                 </div><br><br>
                <div class="donation_form">
-
                 <input type="checkbox" id="clothes" name="donations[]" value="clothes">
                 <label for="clothes">Clothes</label>
                 <input type="number" id="clothes_quantity" name="quantity[clothes]" placeholder="Quantity in Numbers" class="quantity-input">
-                </div><br><br>
+                </div>
+                 <!-- Clothes type and size dropdowns -->
+                <select id="clothes_type" class="" name="clothes_type">
+                    <option value="Shirts">Shirts</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Jackets">Jackets</option>
+                    <option value="Shorts">Shorts</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <select id="clothes_size" name="clothes_size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="XL">Extra Large</option>
+                    <!-- Add more options as needed -->
+                </select><br><br>
                <div class="donation_form">
                 <input type="checkbox" id="medicines" name="donations[]" value="medicines">
                 <label for="medicines">Medicines</label>
@@ -122,7 +128,14 @@ foreach($donations as $donation) {
                 <input type="checkbox" id="footwares" name="donations[]" value="footwares">
                 <label for="footwares">Footwares</label>
                 <input type="number" id="footwares_quantity" name="quantity[footwares]" placeholder="Quantity in Pairs" class="quantity-input">
-                </div><br><br>
+                </div>
+                  <!-- Footwear category dropdown -->
+                <select id="footwear_category" name="footwear_category">
+                    <option value="Men">Men</option>
+                    <option value="Women">Women</option>
+                    <option value="Kids">Kids</option>
+                </select>
+                <br><br>
                <div class="donation_form">
                 <input type="checkbox" id="toys" name="donations[]" value="toys">
                 <label for="toys">Toys</label>
@@ -133,6 +146,7 @@ foreach($donations as $donation) {
                 <label for="utensils">Utensils</label>
                 <input type="number" id="utensils_quantity" name="quantity[utensils]" placeholder="Quantity in Numbers" class="quantity-input">
                 </div><br><br>
+
                <div class="donation_form">
                 <input type="checkbox" id="groceries" name="donations[]" value="groceries">
                 <label for="groceries">Groceries</label>
@@ -150,21 +164,21 @@ foreach($donations as $donation) {
         <input type="text" id="phoneno" name="phoneno" maxlength="10"  pattern="[0-9]{10}"  required>
     </div>
      <div class="input">
-        <label for="district">Provinces:</label>
+        <label for="district">Cities:</label>
         <select id="district" name="district" style="padding: 10px;">
-            <option value="Alberta">Alberta</option>
-            <option value="British Columbia">British Columbia</option>
-            <option value="Manitoba">Manitoba</option>
-            <option value="New Brunswick">New Brunswick</option>
-            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-            <option value="Nova Scotia">Nova Scotia</option>
-            <option value="Ontario">Ontario</option>
-            <option value="Prince Edward Island">Prince Edward Island</option>
-            <option value="Quebec">Quebec</option>
-            <option value="Saskatchewan">Saskatchewan</option>
-            <option value="Northwest Territories">Northwest Territories</option>
-            <option value="Nunavut">Nunavut</option>
-            <option value="Yukon">Yukon</option>
+            <option value="Toronto">Toronto</option>
+            <option value="Ottawa">Ottawa</option>
+            <option value="Kitchener">Kitchener</option>
+            <option value="Oshawa">Oshawa</option>
+            <option value="St.Catherines">St.Catherines</option>
+            <option value="Kingston">Kingston</option>
+            <option value="Greater Sudbury">Greater Sudbury</option>
+            <option value="Peterburg">Peterburg</option>
+            <option value="Hamilton">Hamilton</option>
+            <option value="Windsor">Windsor</option>
+            <option value="Brantford">Brantford</option>
+            <option value="Barrie">Barrie</option>
+            <option value="Missisauga">Missisauga</option>
         </select>
         <label for="address" style="padding-left: 10px;">Address:</label>
         <input type="text" id="address" name="address"  value="<?php echo $_SESSION['address'];?>"required>
@@ -172,40 +186,6 @@ foreach($donations as $donation) {
     
     </div>
 </div>
-
-            <!-- Add more fields for other types of donations if needed -->
-            
-            <!-- <b><p style="text-align: center;">Contact Details</p></b>
-            <div class="input">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" required>
-            </div>
-            <div class="input">
-                <label for="phoneno">PhoneNo:</label>
-                <input type="text" id="phoneno" name="phoneno" maxlength="10" pattern="[0-9]{10}" required>
-            </div>
-            <div class="input">
-                <label for="district">Provinces:</label>
-                <select id="district" name="district" style="padding: 10px;">
-                    <option value="Alberta">Alberta</option>
-                    <option value="British Columbia">British Columbia</option>
-                        <option value="Manitoba">Manitoba</option>
-                        <option value="New Brunswick">New Brunswick</option>
-                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                        <option value="Nova Scotia">Nova Scotia</option>
-                        <option value="Ontario">Ontario</option>
-                        <option value="Prince Edward Island">Prince Edward Island</option>
-                        <option value="Quebec">Quebec</option>
-                        <option value="Saskatchewan">Saskatchewan</option>
-                        <option value="Northwest Territories">Northwest Territories</option>
-                        <option value="Nunavut">Nunavut</option>
-                        <option value="Yukon">Yukon</option>
-
-                </select>
-                <label for="address" style="padding-left: 10px;">Address:</label>
-                <input type="text" id="address" name="address" required>
-            </div> -->
-            
             <div class="btn">
                 <button type="submit" name="submit">Submit</button>
             </div>
