@@ -99,7 +99,7 @@ if(isset($_POST['sign']))
                             <option value="Brantford">Brantford</option>
                             <option value="Barrie">Barrie</option>
                             <option value="Missisauga">Missisauga</option>
-                        </select> 
+                        </select>               
                         
           </div>
           <br>

@@ -70,7 +70,7 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
             <ul>
                 <li><a href="delivery.php">Home</a></li>
                 <li><a href="openmap.php">Map</a></li>
-                <li><a href="deliverymyord.php" class="active">My Orders</a></li>
+                <li><a href="delivery.php">Orders</a></li>
             </ul>
         </nav>
     </header>
@@ -119,7 +119,7 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
     <div class="get">
         <div class="log">
             <a href="delivery.php">Take orders</a>
-            <p>Order assigned to you</p>
+            <p>Order History</p>
         </div>
         
         <!-- Display the orders in an HTML table -->
@@ -137,18 +137,19 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($data as $row) { 
-                            if ($row['donation_submit_status'] == 1) { ?>
-                                <tr>
-                                    <td data-label="Name"><?php echo $row['name']; ?></td>
-                                    <td data-label="Phone Number"><?php echo $row['phoneno']; ?></td>
-                                    <td data-label="Date/Time"><?php echo $row['donation_date']; ?></td>
-                                    <td data-label="Pickup Address"><?php echo $row['address']; ?></td>
-                                    <td data-label="Delivery Address"><?php echo $row['delivery_address']; ?></td>
-                                </tr>
-                            <?php } 
-                        } ?>
-                    </tbody>
+    <?php foreach ($data as $row) { 
+        if ($row['donation_submit_status'] == 1 && $row['delivery_by'] !== NULL) { ?>
+            <tr>
+                <td data-label="Name"><?php echo $row['name']; ?></td>
+                <td data-label="Phone Number"><?php echo $row['phoneno']; ?></td>
+                <td data-label="Date/Time"><?php echo $row['donation_date']; ?></td>
+                <td data-label="Pickup Address"><?php echo $row['address']; ?></td>
+                <td data-label="Delivery Address"><?php echo $row['delivery_address']; ?></td>
+            </tr>
+        <?php } 
+    } ?>
+</tbody>
+
                 </table>
             </div>
         </div>

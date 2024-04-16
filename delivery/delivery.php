@@ -39,7 +39,7 @@ $city = $_SESSION['city'];
         <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="openmap.php" >Map</a></li>
-            <li><a href="deliverymyord.php" >My Orders</a></li>
+            <li><a href="delivery.php">Orders</a></li>
             <li><a href="deliveryprofile.php" >Profile</a></li>
             <li><a href="../logout.php"  >Logout</a></li> 
         </ul>
